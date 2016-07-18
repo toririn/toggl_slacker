@@ -1,0 +1,7 @@
+toggl_slacker:
+  build: .
+  container_name: toggl_slacker
+  env_file: .env
+  volumes:
+    - ".:/usr/src/app"
+  log_driver: json-file

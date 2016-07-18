@@ -21,3 +21,7 @@ end
   # 日報作成起動ジョブ
   eval %Q!every(1.week, :dailyreport_#{day}, at: "#{day} #{@dailyreport_time}") { toggl_job(:morning) }!
 end
+
+every(1.minutes, :test) do
+  toggl_job(:morning)
+end
