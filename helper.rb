@@ -1,7 +1,3 @@
-require 'simple_slack'
-require 'clockwork'
-include Clockwork
-
 def parse_days(days)
   if days.nil?
     return parse_values("Monday, Tuesday, Wednesday, Thursday, Friday")
@@ -18,19 +14,7 @@ def parse_regular_times(times)
   end
 end
 
-def parse_values(env)
-  env.split(",").map{ |e| e.strip }
-end
-
-def toggl_job(type)
-  client = SimpleSlack::Client.new(ENV['GEM_SIMPLE_SLACK_API_TOKEN'])
-  toggl  = client.toggl(ENV['GEM_SIMPLE_SLACK_TOGGL_API_TOKEN'])
-
-  toggl.configure do |config|
-    config.post_channels  = [:test]
-    config.post_bot_name  = "toggler"
-    config.post_bot_image = ":ghost:"
-  end
-
-  toggl.post_message(type)
+def parse_values(val)
+  return [] if val.nil?
+  val.split(",").map{ |e| e.strip }
 end

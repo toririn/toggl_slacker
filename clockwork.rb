@@ -1,5 +1,6 @@
 require_relative './helper'
 require_relative './settings'
+require_relative './job'
 
 handler do |job|
   toggl_job(job)

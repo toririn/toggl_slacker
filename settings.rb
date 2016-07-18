@@ -1,3 +1,8 @@
+@slack_api_token  = ENV['GEM_SIMPLE_SLACK_API_TOKEN']
+@toggl_api_token  = ENV['GEM_SIMPLE_SLACK_TOGGL_API_TOKEN']
+@post_channels    = parse_values(ENV['JOB_POST_CHANNELS'])
+@post_bot_name    = ENV['JOB_POST_BOT_NAME']  || "toggl通知"
+@post_bot_image   = ENV['JOB_POST_BOT_IMAGE'] || ":joy:"
 @job_days         = parse_days(ENV['JOB_KICK_DAYS'])
 @regular_times    = parse_regular_times(ENV['JOB_KICK_REGULAR_TIMES'])
 @morning_time     = ENV['JOB_KICK_MORNING_TIME']     || "09:00"
