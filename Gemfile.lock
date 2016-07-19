@@ -1,0 +1,56 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (5.0.0)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    awesome_print (1.7.0)
+    clockwork (2.0.0)
+      activesupport
+      tzinfo
+    concurrent-ruby (1.0.2)
+    eventmachine (1.2.0.1)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.10.0)
+      faraday (>= 0.7.4, < 0.10)
+    faye-websocket (0.9.2)
+      eventmachine (>= 0.12.0)
+      websocket-driver (>= 0.5.1)
+    i18n (0.7.0)
+    logger (1.2.8)
+    minitest (5.9.0)
+    multi_json (1.12.1)
+    multipart-post (2.0.0)
+    oj (2.17.1)
+    simple_slack (0.3.1)
+      awesome_print
+      slack-api (~> 1.2.1)
+      togglv8
+    slack-api (1.2.3)
+      faraday (>= 0.7, < 0.10)
+      faraday_middleware (~> 0.8)
+      faye-websocket (~> 0.9.2)
+      multi_json (~> 1.0, >= 1.0.3)
+    thread_safe (0.3.5)
+    togglv8 (1.1.0)
+      faraday
+      logger
+      oj
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
+    websocket-driver (0.6.4)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  clockwork
+  simple_slack
+
+BUNDLED WITH
+   1.10.6
