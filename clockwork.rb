@@ -18,7 +18,7 @@ end
   # お昼休み終了メッセージ起動ジョブ
   eval %Q!every(1.week, :after_noon_#{day},  tz: "Tokyo", at: "#{day} #{@after_noon_time}")  { toggl_job(:after_noon) }!
   # 業務終了メッセージ起動ジョブ
-  eval %Q!every(1.week, :night_#{day},       tz: "Tokyo", at: "#{day} #{@night_time}")       { toggl_job(:morning) }!
+  eval %Q!every(1.week, :night_#{day},       tz: "Tokyo", at: "#{day} #{@night_time}")       { toggl_job(:night) }!
   # 日報作成起動ジョブ
-  eval %Q!every(1.week, :dailyreport_#{day}, tz: "Tokyo", at: "#{day} #{@dailyreport_time}") { toggl_job(:morning) }!
+  eval %Q!every(1.week, :dailyreport_#{day}, tz: "Tokyo", at: "#{day} #{@dailyreport_time}") { toggl_job(:dailyreport) }!
 end
